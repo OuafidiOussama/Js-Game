@@ -61,6 +61,8 @@ body{
     top: 25%;
     left: 30%;
     width: 40%;
+    /* transform: scale(0); */
+    transition: transform .5s ;
 }
 .character:hover{
     cursor: url('../assets/c-after.png'), auto;
