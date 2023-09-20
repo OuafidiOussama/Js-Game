@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    cursor: url("../assets/c-before.cur");
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+.background{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+.blackhole{
+    width: 300px;
+}
+.rotate{
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform:  rotate(360deg);
+    }
+}
+
+.progress{
+    width: 100%;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+.progress-bar{
+    width: 40%;
+}
+.container{
+    position: relative;
+}
+.character{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+}
+.character:hover{
+    cursor: url('../assets/c-after.png'), auto;
+}
+.hide{
+    display: none;
+}
+
