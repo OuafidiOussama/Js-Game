@@ -19,7 +19,7 @@ function startGame(){
         grid.appendChild(container);
     }
 
-    setInterval(setCharacter, 2000)
+    requestAnimationFrame(setCharacter)
 }
 
 function getRandomHole(){
@@ -35,6 +35,7 @@ function getRandomHole(){
 function setCharacter(){
 
     const previousCharacter = grid.querySelector('.character');
+    
     if (previousCharacter) {
         previousCharacter.remove();
     }
@@ -51,8 +52,29 @@ function setCharacter(){
     currentHole.appendChild(character);
 
     setTimeout(()=>{
-        character.style.transform = 'scale(1)'
-    }, 1000)
-    
+        character.style.transform = 'scale(1)';
+        const progress = document.getElementById('progress')
+        let width1 = 0;
 
+        character.addEventListener('click', ()=>{
+            width1 += 4
+            progress.style.width = width1 + "%";
+            
+            setTimeout(() => {
+                character.src ='./assets/success.png';
+            }, 100);
+            character.src = './assets/back.png';
+        });
+        setTimeout(() => {
+            if (character.src.endsWith('hungry.png')) {
+              character.src = './assets/fail.png';
+            }
+          }, 1000);
+    }, 2000)
+    
+    
 }
+
+
+window.onload = startGame();
+

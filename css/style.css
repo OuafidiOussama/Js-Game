@@ -7,7 +7,7 @@ body{
     position: relative;
     width: 100%;
     height: 100vh;
-    cursor: url("../assets/c-before.cur");
+    cursor: url("../assets/cursor.png"), auto;
 }
 ::-webkit-scrollbar{
     display: none;
@@ -43,16 +43,30 @@ body{
         transform:  rotate(360deg);
     }
 }
-
-.progress{
+.cont{
+    position: relative;
+    top: 15px;
     width: 100%;
-    padding-top: 2vh;
-    display: flex;
-    justify-content: center;
+    /* text-align: center; */
+}
+.progress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    overflow-x: hidden;
+    z-index: 11;
 }
 .progress-bar{
-    width: 40%;
+    position: relative;
+    width: 1530px;
+    height: 100px;
 }
+.empty{
+    width: 1530px;
+    height: 100px;
+}
+
 .container{
     position: relative;
 }
@@ -65,7 +79,7 @@ body{
     transition: transform .5s ;
 }
 .character:hover{
-    cursor: url('../assets/c-after.png'), auto;
+    cursor: url('../assets/after.png'), auto;
 }
 .hide{
     display: none;
